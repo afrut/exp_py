@@ -17,9 +17,10 @@ cntPt = 200
 
 #***********************************************************************
 #
-# Plotting with pandas
+# PANDAS TIME-SERIES PLOTS
 #
 #***********************************************************************
+# TODO: explore plot formatting
 
 # plot cumulative sum of a time series in a Series type
 ts = pd.Series( np.random.randn( cntPt )    # create a time series
