@@ -121,3 +121,10 @@ refSquares = squares
 refSquares.append( 11**2 )
 print( "The list modified by reference is:" )
 print( squares )
+print( '' )
+
+# find elements in one list that are not in another
+ls1 = range(0,11)
+ls2 = [ 2, 4, 6, 8, 10 ]
+print( 'Elements in ls1 not in ls2:' )
+print( list( set( ls1 ).difference( ls2 ) ) )
