@@ -56,12 +56,20 @@ lsFig.append( ax.get_figure() )             # store figure handle
 # plot x and y with secondary y axis
 ax = df.plot( x = 'D', y = 'A'              # plot column A against column D
             , legend = False )              # without legend
-ax2 = df.plot( x = 'D', y = ['B','C']       # plot column B and C against column D
+ax2 = df.plot( x = 'D', y = 'B'             # plot column B against column D
             , ax = ax                       # on the same figure
             , mark_right = False            # don't mark (right) in legend for columns in secondary axis
             , secondary_y = True )          # on a secondary y axis
-ax.set_ylabel( 'Main Axis' )
-ax2.set_ylabel( 'Secondary Axis' )
+ax2 = df.plot( x = 'D', y = 'C'             # plot column C against column D
+            , ax = ax                       # on the same figure
+            , mark_right = False            # don't mark (right) in legend for columns in secondary axis
+            , secondary_y = True )          # on a secondary y axis
+ax.set_ylabel( 'Main Axis' )                # Axis title for primary y-axis
+ax2.set_ylabel( 'Secondary Axis' )          # Axis title for secondary y-axis
+
+# tick resolution adjustment suppression
+with pd.plotting.plot_params.use( 'x_compat', True ):   # do not automatically adjust x-axis resolution
+    ax = df.loc[:, list( set( df.columns ).difference( ['D'] ) ) ].plot() # plot all  columns except D
 
 # show all plots
 plt.show()
