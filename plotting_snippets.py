@@ -71,5 +71,7 @@ ax2.set_ylabel( 'Secondary Axis' )          # Axis title for secondary y-axis
 with pd.plotting.plot_params.use( 'x_compat', True ):   # do not automatically adjust x-axis resolution
     ax = df.loc[:, list( set( df.columns ).difference( ['D'] ) ) ].plot() # plot all  columns except D
 
+# TODO: explore subplots
+
 # show all plots
 plt.show()
