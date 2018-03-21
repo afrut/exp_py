@@ -102,6 +102,8 @@ df.iat[0,1] = 0                         # set value by position
 df.loc[:,'D'] = np.array([5] * len(df)) # set value by numpy.array
 df2 = df.copy()                         # create a copy
 df2[ df2 > 0 ] = -df2                   # negate all positive values
+df['G'] = s
+df.drop( 'G', axis = 1 )                # drop a column
 
 # reindex the DataFrame
 df1 = df.reindex( index=dates[0:4], columns=list(df.columns) + ['E'] )
