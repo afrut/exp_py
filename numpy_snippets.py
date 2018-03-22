@@ -113,3 +113,15 @@ print( 'Row 3 column 2 of l = \n' + str( l[2,1] ) )
 print( 'Row 3 of l = \n' + str( l[2,:] ) )
 print( 'Column 3 of l = \n' + str( l[:,2] ) )
 print( 'Rows 2 and 3 of l = \n' + str( l[1:3,:] ) )
+print( '' )
+
+#**********************************************************************
+#
+# MODIFYING ARRAYS
+#
+#**********************************************************************
+print( '-------------------------------------------------------' )
+# TODO: explore append, insert, delete, np.newaxis, and reshape
+x = np.append( x, 1 )                   # append an element to a row array
+c = np.append( c, [7, 8, 9], axis = 0)  # append a row to an array
+print( 'c = ', c )
