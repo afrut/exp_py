@@ -134,6 +134,12 @@ print( np.append(c, m, axis = 0) )      # append a row to an array
 m = np.array([7,8])[:,np.newaxis]       # create a column array by adding an axis
 print( 'Appending a column to c:' )
 print( np.append(c, m, axis = 1) )      # append a column to an array
+print( 'Inserting an element into c:' )
+print( np.insert( c, 3, 0 ) )           # flatten c and insert 0 at index 3
+print( 'Inserting a row of 1\'s into c:' )
+print( np.insert( c, 1, 3, axis = 0 ) ) # insert a row of 3's at row 1
+print( 'Inserting a column of 2\'s into c:' )
+print( np.insert( c, 1, 2, axis = 1 ) ) # insert a column of 2's at column 1
 
 
 # TODO: np.insert
@@ -144,3 +150,5 @@ print( np.append(c, m, axis = 1) )      # append a column to an array
 # TODO: np.squeeze
 # TODO: np.array_equal
 # TODO: np.flatten
+# TODO: np.concatenate
+# TODO: slice
