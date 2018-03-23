@@ -93,6 +93,7 @@ print( '' )
 # INDEXING, SLICING AND ITERATING
 #
 #**********************************************************************
+# TODO: boolean masking
 x = np.round( k.cumsum() ** 3, 4 )
 print( '-------------------------------------------------------' )
 print( 'Indexing 1D arrays:' ) 
@@ -121,7 +122,25 @@ print( '' )
 #
 #**********************************************************************
 print( '-------------------------------------------------------' )
+print( 'Modifying arrays:' )
 # TODO: explore append, insert, delete, np.newaxis, and reshape
-x = np.append( x, 1 )                   # append an element to a row array
-c = np.append( c, [7, 8, 9], axis = 0)  # append a row to an array
-print( 'c = ', c )
+print( 'c =' )
+print( c )
+print( 'Appending an element to c:' )
+print( np.append( c, 1 ) )              # flatten c and append an element
+m = np.array([7,8,9])[np.newaxis,:]     # create a row array by adding an axis
+print( 'Appending a row to c:' )
+print( np.append(c, m, axis = 0) )      # append a row to an array
+m = np.array([7,8])[:,np.newaxis]       # create a column array by adding an axis
+print( 'Appending a column to c:' )
+print( np.append(c, m, axis = 1) )      # append a column to an array
+
+
+# TODO: np.insert
+# TODO: np.delete
+# TODO: np.reshape
+# TODO: np.where
+# TODO: np.vectorize
+# TODO: np.squeeze
+# TODO: np.array_equal
+# TODO: np.flatten
