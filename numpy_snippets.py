@@ -93,7 +93,6 @@ print( '' )
 # INDEXING, SLICING AND ITERATING
 #
 #**********************************************************************
-# TODO: boolean masking
 x = np.round( k.cumsum() ** 3, 4 )
 print( '-------------------------------------------------------' )
 print( 'Indexing 1D arrays:' ) 
@@ -109,6 +108,19 @@ print( 'Every 3rd element of x = \n', str( x[::3] ) )
 print( 'Reversed x = \n', str( x[::-1] ) )
 print( '' )
 print( '-------------------------------------------------------' )
+print( 'Boolean indexing:' )
+print( 'x =\n', x )
+print( 'c =\n', c )
+print( 'Boolean mask of x > 30 =\n', x > 30 )
+print( 'Indices of x that are > 30 =\n', np.nonzero(x > 30) )
+print( 'Indices of x that are > 30 =\n', np.where(x > 30) )
+print( 'Elements of x that are > 30 =\n', x[np.nonzero(x > 30)] )
+print( 'Boolean mask of elements [1,5,6] in c =\n', np.isin(c, [1,5,6]) )
+print( 'Indices of [1,5,6] in c =\n', np.nonzero( np.isin(c, [1,5,6]) ) )
+ix = np.nonzero( np.isin(c, [1,5,6]) )
+print( 'List of tuples of indices of [1,5,6] in c =\n'
+     , list( zip( *[list(ix[0]),list(ix[1])] ) ) )
+print( '-------------------------------------------------------' )
 print( 'Indexing 2D arrays:' )
 print( 'Row 3 column 2 of l = \n' + str( l[2,1] ) )
 print( 'Row 3 of l = \n' + str( l[2,:] ) )
@@ -123,7 +135,6 @@ print( '' )
 #**********************************************************************
 print( '-------------------------------------------------------' )
 print( 'Modifying arrays:' )
-# TODO: explore append, insert, delete, np.newaxis, and reshape
 print( 'c =' )
 print( c )
 print( 'Appending an element to c:' )
@@ -152,3 +163,4 @@ print( np.insert( c, 1, 2, axis = 1 ) ) # insert a column of 2's at column 1
 # TODO: np.flatten
 # TODO: np.concatenate
 # TODO: slice
+# TODO: iterators and generators
