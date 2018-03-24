@@ -7,20 +7,15 @@ import pandas as pd
 # clear screen
 sp.call( 'cls', shell = True )
 
-# create list of figures
-lsFig = list()
-
-# create list of axes
-lsAx = list()
-
-# specify the number of points
-cntPt = 200
-
 #***********************************************************************
 #
 # PANDAS TIME-SERIES PLOTS
 #
 #***********************************************************************
+lsFig = list()  # create list of figures
+lsAx = list()   # create list of axes
+cntPt = 200     # specify the number of points
+
 # see avaialbe plotting styles in matplotlib
 print( 'Available plotting styles in matplotlib:' )
 for style in mpl.style.available:
