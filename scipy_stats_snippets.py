@@ -21,5 +21,3 @@ print( 'P( x <= 0.1 ) = ' + str( round( stats.norm.cdf(0.1), 4 ) ) )
 print( 'P( x <= [0.8, 1.6] ) = ' + str( np.round( stats.norm.cdf([0.8, 1.6]), 4 ) ) )
 print( 'P( x <= [-0.5, 0, 0.5] ) = ' + str( np.round( stats.norm.cdf( np.array([-0.5, 0, 0.5]) ), 4 ) ) )
 print( '' )
-
-# TODO: continue adding commands here
