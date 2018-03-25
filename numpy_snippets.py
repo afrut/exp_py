@@ -3,6 +3,14 @@ import numpy as np
 
 sp.call( 'cls', shell = True )
 
+# multiply a number by 2
+def mult2( p ):
+    return p * 2
+
+# add 2 numbers
+def add2( p1, p2 ):
+    return p1 + p2
+
 #**********************************************************************
 #
 # ARRAYS
@@ -159,9 +167,22 @@ print( 'Delete 3rd row of l:\n'                              , np.delete( l, 2, 
 print( 'Delete 3rd column of l:\n'                           , np.delete( l, 2, axis = 1 ) )
 print( 'Concatenate m on top of a:\n'                        , np.concatenate( (a[np.newaxis,:], m), axis = 0 ) )
 print( 'Concatenate m beside a:\n'                           , np.concatenate( (a[np.newaxis,:], m), axis = 1 ) )
+print( 'Squeezing all dimensions of m that are 1:'           , np.squeeze(m) )
+print( 'Squeezing all dimensions of n that are 1:'           , np.squeeze(n) )
+print( '' )
 
-# TODO: np.vectorize
-# TODO: np.squeeze
-# TODO: np.array_equal
-# TODO: slice
+#**********************************************************************
+#
+# OTHER STUFF
+#
+#**********************************************************************
+print( '-------------------------------------------------------' )
+print( 'a =\n', a )
+print( 'b =\n', b )
+vmult = np.vectorize( mult2 )   # vmult2 takes an array of inputs
+vadd2 = np.vectorize( add2 )    # vadd2 takes arrays as inputs
+print( 'Multiplying an array by 2: ', vmult(a) )
+print( 'Adding numbers from 2 arrays: ', vadd2(a, b) )
+print( 'Check if a == a: ', np.array_equal(a,a) )
+
 # TODO: iterators and generators
