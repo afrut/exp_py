@@ -184,5 +184,3 @@ vadd2 = np.vectorize( add2 )    # vadd2 takes arrays as inputs
 print( 'Multiplying an array by 2: ', vmult(a) )
 print( 'Adding numbers from 2 arrays: ', vadd2(a, b) )
 print( 'Check if a == a: ', np.array_equal(a,a) )
-
-# TODO: iterators and generators
