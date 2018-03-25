@@ -70,3 +70,7 @@ with pd.plotting.plot_params.use( 'x_compat', True ):   # do not automatically a
 
 # show all plots
 plt.show()
+
+# TODO: box plot
+# TODO: histogram
+# TODO: scatter_matrix
