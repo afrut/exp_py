@@ -43,6 +43,8 @@ k = np.round( k, 4 )                                    # round the elements of 
 l = np.array( [[1,2,3],[4,5,6],[7,8,9],[10,11,12]] )    # 4 by 3 array
 m = np.array([7,8,9])[np.newaxis,:]                     # create a row array by adding an axis
 n = np.array([7,8])[:,np.newaxis]                       # create a column array by adding an axis
+o = np.column_stack( (np.array([7,8,9])
+                     ,np.array([10,11,12])) )           # create an array by specifying the columns through a tuple
 print( '-------------------------------------------------------' )
 print( 'Array creation:' )
 print( 'a = '       + str( a ) )
