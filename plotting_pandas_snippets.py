@@ -101,7 +101,7 @@ fig = ax[0].get_figure()
 fig.suptitle( 'Boxplot of Features of Iris Dataset' )   # overall title
 
 # histogram
-ax = np.squeeze( df.hist() )
+ax = df.hist()
 fig = ax[0][0].get_figure()
 fig.suptitle( 'Histogram of Features of Iris Dataset' )
 
