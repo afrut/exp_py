@@ -133,7 +133,5 @@ ax = pd.plotting.scatter_matrix( df, alpha = 1 )
 fig = ax[0][0].get_figure()
 fig.suptitle( 'Scatter Matrix of Features of Iris Dataset' )
 
-# TODO: explore subplots
-
 # show all plots
 plt.show()
