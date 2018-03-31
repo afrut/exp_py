@@ -58,6 +58,29 @@ ax.set_xlabel( 'Column D' )                 # x-axis label
 ax.set_ylabel( 'Column A' )                 # y-axis label
 ax.set_title( 'Column A against Column D' ) # plot title
 
+# using subplots with pandas
+fig = plt.figure()
+ax = fig.add_subplot(2,2,1)
+lsAx.append( ax )
+lsFig.append( ax.get_figure() )
+df.plot( x = 'D', y = 'A'
+       , ax = ax )
+ax.set_xlabel( 'Column D' )
+ax.set_ylabel( 'Column A' )
+ax = fig.add_subplot(2,2,2)
+lsAx.append( ax )
+df.plot( x = 'D', y = 'B'
+       , ax = ax )
+ax.set_xlabel( 'Column D' )
+ax.set_ylabel( 'Column B' )
+ax = fig.add_subplot(2,2,3)
+lsAx.append( ax )
+df.plot( x = 'D', y = 'C'
+       , ax = ax )
+ax.set_xlabel( 'Column D' )
+ax.set_ylabel( 'Column C' )
+fig.suptitle( 'Multiple Subplots' )   # overall title
+
 # plot x and y with secondary y axis
 ax = df.plot( x = 'D', y = 'A'              # plot column A against column D
             , legend = False )              # without legend
