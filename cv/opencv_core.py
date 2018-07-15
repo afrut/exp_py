@@ -34,3 +34,15 @@ print( '' )
 print( 'Image dimensions:', img.shape )
 print( 'Total number of pixels:', img.size )
 print( 'Image data type:', img.dtype )
+
+#**********************************************************************
+#
+# SELECTING A REGION OF INTEREST
+#
+#**********************************************************************
+# show rows 390 to 450 and columns 1200 to 1260
+rows = 390
+cols = 1200
+quest = img[rows:rows + 60, cols:cols + 60]
+cv2.imshow('quest',quest)
+k = cv2.waitKey(0)
