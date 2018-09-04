@@ -101,5 +101,7 @@ y = y * np.sum( freq * binWidth )
 ax.plot( x, y )
 ax.legend(['Gaussian Fit','Frequency'], loc='best')
 
+# create a normal probability plot
+
 # show all plots
 plt.show()
