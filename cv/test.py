@@ -22,21 +22,27 @@ cv2.imshow('roi',roi)
 # create a copy of the region of interest
 seg = np.copy( roi )
 
-# first threshold
+# first threshold - global threshold
+# all pixels lower than red 160 is not part of the flower
 mask = roi[:,:,2] <= 160
 seg[mask] = [0,0,0]
 
-# second threshold
-mask = ( seg[:,:,2] - seg[:,:,0] ) <= 11
-seg[mask] = [0,0,0]
-mask = seg[:,:,2] < seg[:,:,0]
-seg[mask] = [0,0,0]
-mask = seg[:,:,2] < seg[:,:,1]
+# second threshold - global threshold
+# all pixels where blue is greater than red is not part of the flower
+mask = roi[:,:,0] > roi[:,:,2]
 seg[mask] = [0,0,0]
 
-# third threshold
-tot = np.add( seg[:,:,2], seg[:,:,1] )
-tot = np.add( tot, seg[:,:,0] )
+## second threshold
+#mask = ( seg[:,:,2] - seg[:,:,0] ) <= 11
+#seg[mask] = [0,0,0]
+#mask = seg[:,:,2] < seg[:,:,0]
+#seg[mask] = [0,0,0]
+#mask = seg[:,:,2] < seg[:,:,1]
+#seg[mask] = [0,0,0]
+#
+## third threshold
+#tot = np.add( seg[:,:,2], seg[:,:,1] )
+#tot = np.add( tot, seg[:,:,0] )
 
 # plot the segmented image in a window
 cv2.namedWindow('seg', cv2.WINDOW_NORMAL)

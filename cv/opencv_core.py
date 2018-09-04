@@ -9,7 +9,7 @@ sp.call( 'cls', shell = True )
 # ACCESSING AND MODIFYING PIXEL VALUES
 #
 #**********************************************************************
-img = cv2.imread('.\img\d3.png')
+img = cv2.imread('.\\img\\flower.png')
 
 # slower (performance-wise) way of accessing pixel values
 print( 'Accessing pixel[100,100]:' )
@@ -40,9 +40,8 @@ print( 'Image data type:', img.dtype )
 # SELECTING A REGION OF INTEREST
 #
 #**********************************************************************
-# show rows 390 to 450 and columns 1200 to 1260
-rows = 390
-cols = 1200
-quest = img[rows:rows + 60, cols:cols + 60]
-cv2.imshow('quest',quest)
+# show a region of interest
+flower = img[ 730:2290, 570:2130 ]
+cv2.namedWindow( 'flower', cv2.WINDOW_NORMAL )
+cv2.imshow( 'flower', flower )
 k = cv2.waitKey(0)

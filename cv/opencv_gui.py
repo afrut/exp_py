@@ -10,7 +10,7 @@ sp.call( 'cls', shell = True )
 #
 #**********************************************************************
 # Load a color image in grayscale
-img = cv2.imread('.\img\img.jpg',0)
+img = cv2.imread('.\\img\\flower.png',0)
 
 # display an image with original resolution and close after
 cv2.imshow('image',img)
